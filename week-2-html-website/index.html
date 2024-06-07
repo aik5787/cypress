@@ -1,12 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<h1>Hello world</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <title>My resume</title>
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div class="wrapper">
+      <!-- Main content -->
+      <div class="main-content">
+        <!-- About me -->
+        <div class="about-me-container">
+          <h2 class="my-profession">QA Engineer</h2>
+          <h1 class="my-name">Aleksandr Kalinovskyi</h1>
+          <p class="my-description">
+            QA Engineer with a passion for software testing. Skilled in functional, UI, API, smoke, and regression testing for web and mobile applications. Experienced in creating, executing, and automating test cases, and tracking bug reports until resolution.Focused on fostering collaboration between developers and engineering teams in agile environments to drive product improvements. Detail-oriented and quality-driven, capable of working with offshore teams across different time zones.
+          </p>
+        </div>
+        <!-- My projects -->
+        <div class="projects-container">
+          <h3 class="main-content-title">Projects</h3>
+          <ol class="project-list">
+            <li class="project-item">
+              <a href="https://aik5787.github.io/goit-markup-hw-07/" class="project-item-link"
+                >https://aik5787.github.io/goit-markup-hw-07/</a
+              >
+              <span class="project-item-description"
+                >........................................................................[
+                HTML5, CSS3 ]</span
+              >
+            </li>
+            <li class="project-item">
+              <a
+                href="https://aik5787.github.io/goit-js-hw-11/"
+                class="project-item-link"
+                >https://aik5787.github.io/goit-js-hw-11/</a
+              >
+              <span class="project-item-description"
+                >................................................................................................[
+                JavaScript ]</span
+              >
+            </li>
+            <li class="project-item">
+              <a
+                href="https://aik5787.github.io/goit-react-hw-08-phonebook/"
+                class="project-item-link"
+                >https://aik5787.github.io/goit-react-hw-08-phonebook/</a
+              >
+
+              <span class="project-item-description"
+                >..........................................[
+                React.js, Node.js ]</span
+              >
+            </li>
+          </ol>
+        </div>
+        <!-- Work expirience -->
+        <div class="work-expirience-container">
+          <h3 class="main-content-title">Work Experience</h3>
+          <!-- Company1 -->
+          <div class="work-expirience-place">
+            <h4 class="work-expirience-position">
+                QA Engineer
+              <span class="work-expirience-company">Delekhomes</span>
+            </h4>
+            <p class="work-period">
+              March 2024 - up to now
+              <span class="text-divider">|</span> Canada
+            </p>
+            <ul class="work-duties-list">
+              <li class="work-duties">
+                Write easy-to-follow bug reports using videos or images, tracking defects through JIRA
+              </li>
+              <li class="work-duties">
+                Performing smoke, functional, boundary, integration and user interface testing of web-based and mobile applications
+              </li>
+              <li class="work-duties">
+                Test case automation of the web based application by utilizing Cypress framework
+              </li>
+              <li class="work-duties">
+                Performing manual user testing of the iOS application through TestFlight
+              </li>
+              <li class="work-duties">
+                Web services testing using Postman
+              </li>
+            </ul>
+          </div>
+          <!-- Company2 -->
+          <div class="work-expirience-place">
+            <h4 class="work-expirience-position">
+              Sales Representative
+
+              <span class="work-expirience-company"
+                >Arrow Hotels & Resorts LLP</span
+              >
+            </h4>
+            <p class="work-period">
+              March 2016 - October 2022
+              <span class="text-divider">|</span> Montenegro, Indonesia,
+              Thailand, Vietnam, UAE
+            </p>
+            <ul class="work-duties-list">
+              <li class="work-duties">
+                Delivered polished and qualified timeshare sales presentations
+                for prospective MTC Platinum Owners, Club Members and other
+                qualified customers.
+              </li>
+              <li class="work-duties">
+                Overcame objections with successful product demonstrations and
+                persuasive communication skills and sale of vacation packages.
+              </li>
+              <li class="work-duties">
+                Completed and closed the sales contract process by ensuring all
+                required/legal paperwork and documents are signed.
+              </li>
+            </ul>
+          </div>
+          <!-- COmpany3 -->
+          <div class="work-expirience-place">
+            <h4 class="work-expirience-position">
+              Regional Sales Manager
+              <span class="work-expirience-company"
+                >Savensia Group (PJSC "Zvenigorodsky cheese plant")</span
+              >
+            </h4>
+            <p class="work-period">
+              June 2013 - February 2016
+              <span class="text-divider">|</span> Ukraine
+            </p>
+            <ul class="work-duties-list">
+              <li class="work-duties">
+                Leveraged new and existing sales channels to build market share,
+                expand distribution, and drive new sales.
+              </li>
+              <li class="work-duties">
+                Scheduled on-site visits and presentations to connect with new,
+                established, and potential clients.
+              </li>
+              <li class="work-duties">
+                Identified leads, provided sales support, and supervised
+                contract negotiations.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Education -->
+        <div class="education-container">
+          <h3 class="main-content-title">Education</h3>
+          <h4 class="university-name">Codemify</h4>
+          <h5 class="field">QA engineer (manual, automated)</h5>
+          <p class="education-period">
+            March 2024 - up to now
+            <span class="text-divider">|</span> Canada
+          </p>
+        </div>
+        <div class="education-container">
+            <h4 class="university-name">GoIT</h4>
+            <h5 class="field">Fullstack development</h5>
+            <p class="education-period">
+              March 2023 - February 2024
+              <span class="text-divider">|</span> Ukraine
+            </p>
+          </div>
+           <div class="education-container">
+          <h4 class="university-name">Donbas State Techninical University</h4>
+          <h5 class="field">Finance</h5>
+          <p class="education-period">
+            September 2002 - June 2007
+            <span class="text-divider">|</span> Ukraine
+          </p>
+        </div>
+      </div>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <img
+          src="./IMG_9174.jpg"
+          alt="My photo"
+          width="370px"
+          class="my-photo"
+        />
+        <!-- Contacts -->
+        <div class="contacts-container">
+          <h3 class="sidebar-title">Contacts</h3>
+          <p class="contacts-item">
+            <span class="contacts-type">C: </span>
+            <a href="tel:+14379934281" class="contacts-number">+14379934281</a>
+          </p>
+          <p class="contacts-item">
+            <span class="contacts-type">E: </span>
+            <a href="mailto:aik5787@gmail.com" class="contacts-email"
+              >aik5787@gmail.com</a
+            >
+          </p>
+          <p class="contacts-item">
+            <span class="contacts-type">L: </span>
+            <a href="https://www.linkedin.com/in/alexanderkalinovskyi/" class="contacts-email"
+              >Aleksandr Kalinovskyi</a
+            >
+          </p>
+        </div>
+        <!-- Tech skills -->
+        <div class="tech-skills-container">
+          <h3 class="sidebar-title">Tech Skills</h3>
+          <ul class="skills-list">
+            <li class="skills-list-item">
+                <span class="skills-list-text">JIRA</span>
+              </li>
+              <li class="skills-list-item">
+                  <span class="skills-list-text">QASE</span>
+                </li>
+                <li class="skills-list-item">
+                  <span class="skills-list-text">Postman</span>
+                </li>
+                <li class="skills-list-item">
+                    <span class="skills-list-text">Cypres</span>
+                  </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">HTML5</span>
+            </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">CSS3</span>
+            </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">CI/CD: GitHub Actions</span>
+            </li>
+            
+            <li class="skills-list-item">
+              <span class="skills-list-text">JavaScript</span>
+            </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">React.js</span>
+            </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">Node.js</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Soft skills -->
+        <div class="soft-skills-container">
+          <h3 class="sidebar-title">Soft Skills</h3>
+          <ul class="skills-list">
+            <li class="skills-list-item">
+              <span class="skills-list-text">Scrum</span>
+            </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">Agile</span>
+            </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">Adaptability</span>
+            </li>
+            <li class="skills-list-item">
+                <span class="skills-list-text">Critical Thinking</span>
+              </li>
+              <li class="skills-list-item">
+                <span class="skills-list-text">Time Management</span>
+              </li>
+            <li class="skills-list-item">
+              <span class="skills-list-text">Teamwork</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </body>
 </html>
