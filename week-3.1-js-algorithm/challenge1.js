@@ -10,6 +10,9 @@ function checkGreaterTen(number) {
     if(number > 10){
       return "Greater than 10"
     }
+    else if (number > 10) {
+      return 'number is equal 10'
+    }
     else{
         return "Not greater than 10"
     }

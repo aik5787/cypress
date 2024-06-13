@@ -2,6 +2,9 @@ function isBiggerThan5(number) {
     if(number > 5){
       return true
     }
+    else if (number === 5){
+      return 'number is equal 5'
+    }
     else{
       return false
     }
