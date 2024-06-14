@@ -9,17 +9,17 @@
 // console.log(checkTemp(75)); // "Warm"
 // console.log(checkTemp(95)); // "Hot"
 
-function checkTemp (Fahrenheit) {
-    if (Fahrenheit < 32) {
+function checkTemp (fahrenheit) {
+    if (fahrenheit < 32) {
         return "Freezing"
     }
-    else  if (Fahrenheit >= 32 && Fahrenheit <=50) {
+    else  if (fahrenheit >= 32 && fahrenheit <=50) {
         return "Cold"
     }
-    else  if (Fahrenheit >= 51 && Fahrenheit <=70) {
+    else  if (fahrenheit >= 51 && fahrenheit <=70) {
         return "Mild"
     }
-    else  if (Fahrenheit >= 71 && Fahrenheit <=90) {
+    else  if (fahrenheit >= 71 && fahrenheit <=90) {
         return "Warm"
     }
     return "Hot"
