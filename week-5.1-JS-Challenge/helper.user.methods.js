@@ -4,7 +4,7 @@ class Helpers {
 
     response.users.filter((user) => {
       let roleObject = user.role;
-      if (roleObject.status === status && roleObject.description) {
+      if (roleObject.status === status && roleObject.description !== null && roleObject.description !== "") {
         users.push(user.name);
       }
     });
@@ -42,7 +42,8 @@ class Helpers {
 
     response.users.filter((user) => {
       if (user.currency === currency) {
-        balances.push(user.balance);
+        const balance = user.balance.replace('$', '');
+        balances.push(Number(balance));
       }
     });
 
