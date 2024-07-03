@@ -12,11 +12,13 @@ class Helpers {
   }
 
   filterMatchesByCoatingAndShower(response) {
-    
     let matches = [];
 
     response.matches.filter((match) => {
-      if (match.matchInfo.coating === "Main.artificialGrass" && match.matchInfo.isShower === true) {
+      if (
+        match.matchInfo.coating === "Main.artificialGrass" &&
+        match.matchInfo.isShower === true
+      ) {
         matches.push(match.matchId);
       }
     });
@@ -25,7 +27,6 @@ class Helpers {
   }
 
   filterMatchesByLocationAndPrice(response) {
-
     let matches = [];
 
     response.matches.filter((match) => {
@@ -38,7 +39,6 @@ class Helpers {
   }
 
   filterMatchesByCreatorFeeAndStatus(response) {
-
     let matches = [];
 
     response.matches.filter((match) => {
@@ -51,11 +51,13 @@ class Helpers {
   }
 
   filterMatchesByCoveringAndDressingRoom(response) {
-
     let matches = [];
 
     response.matches.filter((match) => {
-      if (match.matchInfo.covering === "Main.onTheStreet" && match.matchInfo.isDressingRoom === true) {
+      if (
+        match.matchInfo.covering === "Main.onTheStreet" &&
+        match.matchInfo.isDressingRoom === true
+      ) {
         matches.push(match.matchId);
       }
     });
