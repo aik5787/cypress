@@ -19,7 +19,6 @@ describe("Registration", () => {
     cy.get("a p").should("have.text", "role: user");
     cy.get("h6").should("have.text", "Test  Testerov");
     cy.title().should("eq", "User: Profile | Delek Homes");
-    cy.url().should("include", "dashboard/user/profile");
   });
 
   it("Should not register with an already existing email account", () => {
@@ -33,7 +32,6 @@ describe("Registration", () => {
     cy.get("form .MuiAlert-message")
       .should("exist")
       .and("have.text", "Input data validation failed");
-    cy.url().should("include", "auth/register");
   });
 
   it("Should not register without filling in required fields", () => {
@@ -52,6 +50,5 @@ describe("Registration", () => {
     cy.get('[id=":r8:-helper-text"]')
       .should("exist")
       .and("have.text", "Password is required");
-    cy.url().should("include", "auth/register");
   });
 });

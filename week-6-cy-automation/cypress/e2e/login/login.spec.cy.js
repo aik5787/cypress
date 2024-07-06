@@ -8,6 +8,7 @@ describe("Login", () => {
   });
 
   it("Log in successfully!", () => {
+    cy.get("h6").should("have.text", "Test  Test");
     cy.get("a p").should("have.text", "role: user");
     cy.title().should("eq", "User: Profile | Delek Homes");
   });
