@@ -6,7 +6,7 @@
 function getLargestPalindrome(limit) {
   let largestPalindrome = 0;
   for (let i = 0; i <= limit; i++) {
-    for (let j = 0; j <= i; j++) {
+    for (let j = i; j <= limit; j++) {
       let curProduct = j * i;
       if (
         curProduct.toString() ===
