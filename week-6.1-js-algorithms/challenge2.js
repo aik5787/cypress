@@ -11,22 +11,42 @@ let arr = [40, 50, 30, 40, 50, 20, 30, 100, 11, 11];
 let n = arr.length;
 
 function mostFrequent(arr, n) {
-  let maxCount = 0;
-  let mostFrequentElement = null;
+  let frequency = {};
+  let maxFrequency = 0;
+  let mostFrequentElement = 0;
 
-  for (let i = 0; i < n; i++) {
-    let currentCount = 0;
-    for (let j = 0; j < n; j++) {
-      if (arr[i] === arr[j]) {
-        currentCount++;
+  arr.forEach((num) => {
+    if (frequency[num]) {
+      frequency[num] += 1;
+      if (frequency[num] > maxFrequency) {
+        maxFrequency = frequency[num];
+        mostFrequentElement = num;
       }
+    } else {
+      frequency[num] = 1;
     }
-    if (currentCount > maxCount) {
-      maxCount = currentCount;
-      mostFrequentElement = arr[i];
-    }
-  }
+  });
+
   return mostFrequentElement;
 }
+
+// function mostFrequent(arr, n) {
+//   let maxCount = 0;
+//   let mostFrequentElement = null;
+
+//   for (let i = 0; i < n; i++) {
+//     let currentCount = 0;
+//     for (let j = 0; j < n; j++) {
+//       if (arr[i] === arr[j]) {
+//         currentCount++;
+//       }
+//     }
+//     if (currentCount > maxCount) {
+//       maxCount = currentCount;
+//       mostFrequentElement = arr[i];
+//     }
+//   }
+//   return mostFrequentElement;
+// }
 
 console.log(mostFrequent(arr, n)); // 40
