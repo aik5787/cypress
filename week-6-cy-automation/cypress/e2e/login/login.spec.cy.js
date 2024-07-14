@@ -7,13 +7,13 @@ describe("Login", () => {
     cy.contains("Login").click();
   });
 
-  it("Log in successfully!", () => {
+  it("Should Log in with existing account", () => {
     cy.get("h6").should("have.text", "Test  Test");
     cy.get("a p").should("have.text", "role: user");
     cy.title().should("eq", "User: Profile | Delek Homes");
   });
 
-  it("Log out successfully!", () => {
+  it("Should Log out", () => {
     cy.get('button [data-testid="PersonIcon"]').click();
     cy.contains("Logout").click();
 
