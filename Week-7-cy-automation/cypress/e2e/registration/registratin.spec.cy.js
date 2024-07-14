@@ -12,7 +12,7 @@ describe("Registration", () => {
     homePage.registartionBtn.click();
   });
 
-  it("Registration successfully!", () => {
+  it("Should register a new account", () => {
     registrationPage.firstNameInput.type("Test");
     registrationPage.lastNameInput.type("Testerov");
     registrationPage.emailInput.type(email);

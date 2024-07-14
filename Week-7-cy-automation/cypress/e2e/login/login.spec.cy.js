@@ -7,7 +7,7 @@ describe("Login", () => {
     cy.visit("/");
   });
 
-  it("Log in successfully!", () => {
+  it("Should Log with exusting account", () => {
     homePage.loginBtn.click();
     loginPage.emailInput.type("test12345@gmail.com");
     loginPage.passwordInput.type("qwerty123");
@@ -18,7 +18,7 @@ describe("Login", () => {
     cy.title().should("eq", "User: Profile | Delek Homes");
   });
 
-  it("Log out successfully!", () => {
+  it("Should Log out", () => {
     loginPage.login("test12345@gmail.com", "qwerty123");
     dashboardPage.accountIcon.click();
     dashboardPage.logout.click();
