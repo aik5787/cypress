@@ -28,8 +28,9 @@ describe("Search", () => {
           expect(numberBedrooms).to.be.greaterThan(1);
         });
     });
-    
+
     cy.contains("More Info").click();
+    
     featuredListing.bedroomIcn
       .parent()
       .invoke("text")
