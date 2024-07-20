@@ -13,10 +13,10 @@ describe("Registration", () => {
   });
 
   it("Should register a new account", () => {
-    registrationPage.firstNameInput.type("Test");
-    registrationPage.lastNameInput.type("Testerov");
-    registrationPage.emailInput.type(email);
-    registrationPage.paswwordInput.type(password);
+    registrationPage.firstNmInp.type("Test");
+    registrationPage.lastNmInp.type("Testerov");
+    registrationPage.emailInp.type(email);
+    registrationPage.paswwordInp.type(password);
     registrationPage.submitBtn.click();
 
     dashboardPage.roleLbl.should("have.text", "role: user");
@@ -27,7 +27,7 @@ describe("Registration", () => {
   it("Should not register with an already existing email account", () => {
     registrationPage.registration("Test", "Testerov", email, password);
 
-    registrationPage.alertMessage
+    registrationPage.alertMes
       .should("exist")
       .and("have.text", "Input data validation failed");
   });
@@ -35,16 +35,16 @@ describe("Registration", () => {
   it("Should not register without filling in required fields", () => {
     registrationPage.submitBtn.click();
 
-    registrationPage.firstNameReqAlert
+    registrationPage.firstNmReqAl
       .should("exist")
       .and("have.text", "First name required");
-    registrationPage.lastNameReqAlert
+    registrationPage.lastNmReqAl
       .should("exist")
       .and("have.text", "Last name required");
-    registrationPage.emailReqAlert
+    registrationPage.emailReqAl
       .should("exist")
       .and("have.text", "Email is required");
-    registrationPage.passwordReqAlert
+    registrationPage.passwordReqAl
       .should("exist")
       .and("have.text", "Password is required");
   });

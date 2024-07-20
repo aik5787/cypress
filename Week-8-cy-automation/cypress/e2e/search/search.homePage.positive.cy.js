@@ -4,11 +4,11 @@ import featuredListing from "../../page_objects/featuredListings.page";
 describe("Search", () => {
   beforeEach(() => {
     cy.visit("/");
-    homePage.modeSwitcher.click();
+    homePage.toggle.click();
   });
 
   it("Should search by keyword", () => {
-    homePage.searchInput.type("Sprucewood");
+    homePage.searchInp.type("Sprucewood");
     cy.contains("Start Search").click();
     cy.contains("Test Real Estate Object");
     cy.contains("Dacotious");
@@ -17,10 +17,10 @@ describe("Search", () => {
 
   it("Should search by bedrooms", () => {
     cy.contains("label", "Bedrooms").parent().click();
-    homePage.bedroomsDropdownSelect.click();
+    homePage.bedroomsDrpdwnSel.click();
     cy.contains("Start Search").click();
 
-    featuredListing.bedroomIcon.parent().each(($el) => {
+    featuredListing.bedroomIcn.parent().each(($el) => {
       cy.wrap($el)
         .invoke("text")
         .then((text) => {
@@ -29,7 +29,7 @@ describe("Search", () => {
         });
     });
     cy.contains("More Info").click();
-    featuredListing.bedroomIcon
+    featuredListing.bedroomIcn
       .parent()
       .invoke("text")
       .then((text) => {
@@ -66,7 +66,7 @@ describe("Search", () => {
 
   it("Should search by price", () => {
     cy.visit("/featured-listings?price=500000-700000");
-    featuredListing.priceContainer.each(($el) => {
+    featuredListing.priceBox.each(($el) => {
       cy.wrap($el)
         .find(".MuiBox-root")
         .eq(0)

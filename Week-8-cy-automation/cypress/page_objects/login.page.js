@@ -1,17 +1,12 @@
 class LoginPage {
-  get emailInput() {
-    return cy.get('[name="email"]');
-  }
-  get passwordInput() {
-    return cy.get('[name="password"]');
-  }
-  get loginBtn() {
-    return cy.contains("Login");
-  }
+  get emailInp() {return cy.get('[name="email"]')}
+  get passwordInp() {return cy.get('[name="password"]')}
+  get loginBtn() {return cy.contains("Login")}
+
   login(email, password) {
     this.loginBtn.click();
-    this.emailInput.type(email);
-    this.passwordInput.type(password);
+    this.emailInp.type(email);
+    this.passwordInp.type(password);
     this.loginBtn.click();
   }
 }
