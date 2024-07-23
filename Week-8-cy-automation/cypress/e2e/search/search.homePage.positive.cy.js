@@ -30,7 +30,7 @@ describe("Search", () => {
     });
 
     cy.contains("More Info").click();
-    
+
     featuredListing.bedroomIcn
       .parent()
       .invoke("text")
