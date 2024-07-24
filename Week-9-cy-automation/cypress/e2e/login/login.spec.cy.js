@@ -1,6 +1,7 @@
 import loginPage from "../../page_objects/login.page";
 import homePage from "../../page_objects/home.page";
 import dashboardPage from "../../page_objects/dashboard.page";
+import userCredentials from "../../fixtures/testData/userCredentials.json";
 
 describe("Login", () => {
   beforeEach(() => {
@@ -9,18 +10,18 @@ describe("Login", () => {
 
   it("Should Log in with exusting account", () => {
     homePage.loginBtn.click();
-    loginPage.emailInput.type("test12345@gmail.com");
-    loginPage.passwordInput.type("qwerty123");
+    loginPage.emailInp.type(userCredentials.realtor.email);
+    loginPage.passwordInp.type(userCredentials.realtor.password);
     loginPage.loginBtn.click();
 
-    dashboardPage.nameLbl.should("have.text", "Test  Testerov");
-    dashboardPage.roleLbl.should("have.text", "role: realtor");
+    dashboardPage.nameLbl.should("have.text", userCredentials.realtor.name);
+    dashboardPage.roleLbl.should("have.text", userCredentials.realtor.role);
     cy.title().should("eq", "User: Profile | Delek Homes");
   });
 
   it("Should Log out", () => {
-    loginPage.login("test12345@gmail.com", "qwerty123");
-    dashboardPage.accountIcon.click();
+    cy.login();
+    dashboardPage.accountIcn.click();
     dashboardPage.logout.click();
 
     cy.url().should("include", "auth/login");

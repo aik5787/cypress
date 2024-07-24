@@ -1,0 +1,26 @@
+{
+  "search": {
+    "keyWord": "Sprucewood",  
+    "title": "Test Real Estate Object",
+    "city": "Dacotious",
+    "price": "$ 555,777",
+    "address": "8985 S Durango dr",
+    "state": "State: SD",
+    "sqft": "1122",
+    "bedrooms": "Bedrooms: 2",
+    "garage": "Garage: 1",
+    "bathrooms": "Bathrooms: 2",
+    "lotSize": "Lot Size: 5600",
+    "realtorName": "Test Testerov",
+    "description": "Sprucewood",
+    "minPrice": 500000,
+    "maxPrice": 700000  
+    },
+  "registration": {
+    "validationFailed": "Input data validation failed",
+    "firstNameRequired": "First name required",
+    "lastNameRequired": "Last name required",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required"
+  }
+}
