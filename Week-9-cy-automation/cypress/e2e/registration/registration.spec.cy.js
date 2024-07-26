@@ -1,9 +1,8 @@
 import { faker } from "@faker-js/faker";
-import homePage from "../../page_objects/home.page";
 import dashboardPage from "../../page_objects/dashboard.page";
 import registrationPage from "../../page_objects/registration_page";
 import userCredentials from "../../fixtures/testData/userCredentials.json";
-import verificationTexts from "../../fixtures/testData/verificationText.json";
+import registrationValidationErrors from "../../fixtures/testData/registrationValidationErrors.json";
 
 const email = faker.internet.email();
 const password = faker.internet.password();
@@ -12,16 +11,16 @@ const lastName = faker.name.lastName();
 
 describe("Registration", () => {
   beforeEach(() => {
-    cy.visit("/");
-    homePage.registartionBtn.click();
+    cy.visit("/auth/register");
   });
 
   it("Should register a new account", () => {
-    registrationPage.firstNmInp.type(firstName);
-    registrationPage.lastNmInp.type(lastName);
-    registrationPage.emailInp.type(email);
-    registrationPage.passwordInp.type(password);
-    registrationPage.submitBtn.click();
+    registrationPage.registration(
+      firstName,
+      lastName,
+      email,
+      password
+    );
 
     dashboardPage.roleLbl.should("have.text", userCredentials.user.role);
     dashboardPage.nameLbl.should("have.text", `${firstName}  ${lastName}`);
@@ -36,25 +35,17 @@ describe("Registration", () => {
       password
     );
 
-    registrationPage.alertMes
+    registrationPage.alertMssg
       .should("exist")
-      .and("have.text", verificationTexts.registration.validationFailed);
+      .and("have.text", registrationValidationErrors.validationFailed);
   });
 
-  it("Should not register without filling in required fields", () => {
+  it ("Should not register without filling in required fields", () => {
     registrationPage.submitBtn.click();
 
-    registrationPage.firstNmReqAl
-      .should("exist")
-      .and("have.text", verificationTexts.registration.firstNameRequired);
-    registrationPage.lastNmReqAl
-      .should("exist")
-      .and("have.text", verificationTexts.registration.lastNameRequired);
-    registrationPage.emailReqAl
-      .should("exist")
-      .and("have.text", verificationTexts.registration.emailRequired);
-    registrationPage.passwordReqAl
-      .should("exist")
-      .and("have.text", verificationTexts.registration.passwordRequired);
+    cy.contains(registrationValidationErrors.firstNameRequired)
+    cy.contains(registrationValidationErrors.lastNameRequired)
+    cy.contains(registrationValidationErrors.emailRequired)
+    cy.contains(registrationValidationErrors.passwordRequired)
   });
 });

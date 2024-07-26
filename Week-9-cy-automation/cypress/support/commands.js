@@ -1,3 +1,4 @@
+import userCredentials from "../fixtures/testData/userCredentials.json";
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -12,7 +13,7 @@
 // -- This is a parent command --
 Cypress.Commands.add(
   "login",
-  (email = "test12345@gmail.com", password = "qwerty123") => {
+  (email = userCredentials.realtor.email, password = userCredentials.realtor.password) => {
     cy.request("POST", "/api/users/login", {
       email: email,
       password: password,
