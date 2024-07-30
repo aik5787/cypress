@@ -7,7 +7,7 @@ describe("Login", () => {
     cy.visit("/");
   });
 
-  it("Should Log in", () => {
+  it("Should Log in with exusting account", () => {
     loginPage.login(userCredentials.realtor.email, userCredentials.realtor.password);
 
     dashboardPage.nameLbl.should("have.text", userCredentials.realtor.name);
