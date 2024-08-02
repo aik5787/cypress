@@ -1,0 +1,15 @@
+{
+    "city": "Dacotious",
+    "title": "Test Real Estate Object",
+    "state": "SD",
+    "price": 555777,
+    "address": "8985 S Durango dr",
+    "zipcode": 55555,
+    "sqft": 1122,
+    "bedrooms": 2,
+    "garage":  1,
+    "bathrooms": 2,
+    "lotSize": 5600,
+    "description": "Sprucewood"
+  }
+  
