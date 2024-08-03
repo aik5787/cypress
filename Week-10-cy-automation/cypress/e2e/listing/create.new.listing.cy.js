@@ -7,6 +7,7 @@ describe("Listing", () => {
   beforeEach(() => {
     cy.visit("/");
   });
+  
   const uniqueTitle = `${newListingDetails.title}-${Date.now()}`;
 
   it("Should create a new listing", () => {

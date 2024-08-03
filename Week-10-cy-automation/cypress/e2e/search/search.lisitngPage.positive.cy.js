@@ -4,15 +4,17 @@ import createNewListingPage from "../../page_objects/createNewListing.page";
 
 describe("Search", () => {
   before(() => {
-    createNewListingPage.createListing();
+    cy.createListing();
   });
+
   beforeEach(() => {
     cy.errorHandler();
     cy.visit("/featured-listings");
     featuredListingPage.toggle.click();
   });
+  s
   after(() => {
-    createNewListingPage.deleteListing();
+    cy.deleteListing();
   });
 
   it("Should search by keyword", () => {

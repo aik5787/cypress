@@ -11,6 +11,7 @@ class RegistrationPage {
   get passwordReqAl() {return cy.get('[id=":r8:-helper-text"]')}
 
   registration(firstName, lastName, email, password) {
+    
     this.firstNmInp.type(firstName);
     this.lastNmInp.type(lastName);
     this.emailInp.type(email);

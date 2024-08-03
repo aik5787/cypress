@@ -14,13 +14,18 @@ describe("Registration", () => {
     cy.visit("/auth/register");
   });
 
-  it("Should register a new account", () => {
-    registrationPage.registration(
-      firstName,
-      lastName,
-      email,
-      password
-    );
+  after(() => {
+    cy.deleteNewUser()
+  });
+
+  it ("Should register a new account", () => {
+    cy.intercept('POST', '/api/users/registration').as('registerUser');
+    registrationPage.registration(firstName, lastName, email, password);
+    cy.wait('@registerUser').then((interception) => {
+      const newUserId = interception.response.body.user.id;
+      Cypress.env("newUserId", newUserId);
+      window.localStorage.setItem("accessToken", interception.response.body.accessToken);
+    });
 
     dashboardPage.roleLbl.should("have.text", userCredentials.user.role);
     dashboardPage.nameLbl.should("have.text", `${firstName}  ${lastName}`);
@@ -28,24 +33,21 @@ describe("Registration", () => {
   });
 
   it("Should not register with an already existing email account", () => {
-    registrationPage.registration(
-      firstName,
-      lastName,
-      userCredentials.realtor.email,
-      password
-    );
+    registrationPage.registration(firstName, lastName, userCredentials.realtor.email, password);
 
-    registrationPage.alertMssg
-      .should("exist")
-      .and("have.text", registrationValidationErrors.validationFailed);
+    registrationPage.alertMssg.should("exist").and("have.text", registrationValidationErrors.validationFailed);
   });
 
-  it ("Should not register without filling in required fields", () => {
+  it("Should not register without filling in required fields", () => {
     registrationPage.submitBtn.click();
 
-    cy.contains(registrationValidationErrors.firstNameRequired)
-    cy.contains(registrationValidationErrors.lastNameRequired)
-    cy.contains(registrationValidationErrors.emailRequired)
-    cy.contains(registrationValidationErrors.passwordRequired)
+    cy.contains(registrationValidationErrors.firstNameRequired);
+    cy.contains(registrationValidationErrors.lastNameRequired);
+    cy.contains(registrationValidationErrors.emailRequired);
+    cy.contains(registrationValidationErrors.passwordRequired);
+  });
+
+  it("Should overwrite user role", () => {
+    cy.overwriteRole()
   });
 });
