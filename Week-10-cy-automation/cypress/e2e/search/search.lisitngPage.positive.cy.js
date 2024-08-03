@@ -12,7 +12,7 @@ describe("Search", () => {
     cy.visit("/featured-listings");
     featuredListingPage.toggle.click();
   });
-  s
+  
   after(() => {
     cy.deleteListing();
   });
