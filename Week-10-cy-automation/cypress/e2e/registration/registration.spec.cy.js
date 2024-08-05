@@ -48,6 +48,10 @@ describe("Registration", () => {
   });
 
   it("Should overwrite user role", () => {
-    cy.overwriteRole()
+    cy.overwriteRole();
+    cy.login(email, password);
+    
+    dashboardPage.roleLbl.should("have.text", userCredentials.realtor.role);
+
   });
 });

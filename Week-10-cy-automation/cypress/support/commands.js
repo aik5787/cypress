@@ -24,14 +24,12 @@ Cypress.Commands.add("login", (email = userCredentials.realtor.email, password =
 });
 
 Cypress.Commands.add("createListing", () => {
-  const uniqueTitle = `${newListingDetails.title}-${Date.now()}`;
-  Cypress.env("uniqueTitle", uniqueTitle);
   cy.login(userCredentials.admin.email, userCredentials.admin.password);
   cy.fixture("/images/houseimage.jpg", "binary").then((file) => {
     const blob = Cypress.Blob.binaryStringToBlob(file);
 
     const formdata = new FormData();
-    formdata.append("title", uniqueTitle);
+    formdata.append("title", newListingDetails.title);
     formdata.append("description", newListingDetails.description);
     formdata.append("city", newListingDetails.city);
     formdata.append("address", newListingDetails.address);
@@ -60,7 +58,6 @@ Cypress.Commands.add("createListing", () => {
 
 Cypress.Commands.add("deleteListing", () => {
   cy.request("DELETE", `/api/estate-objects/${Cypress.env("newListingId")}`).then((deleteResponse) => {
-    Cypress.env("uniqueTitle", null);
     Cypress.env("newListingId", null);
   });
 });

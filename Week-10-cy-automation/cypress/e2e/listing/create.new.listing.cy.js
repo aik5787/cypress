@@ -8,13 +8,12 @@ describe("Listing", () => {
     cy.visit("/");
   });
   
-  const uniqueTitle = `${newListingDetails.title}-${Date.now()}`;
 
   it("Should create a new listing", () => {
     cy.login(userCredentials.admin.email, userCredentials.admin.password);
     cy.visit("/dashboard/real-estate/new");
 
-    cy.contains("label", "Title").parent().type(uniqueTitle);
+    cy.contains("label", "Title").parent().type(newListingDetails.title);
     cy.contains("label", "Description").parent().type(newListingDetails.description);
     cy.contains("label", "City").parent().type(newListingDetails.city);
     cy.contains("label", "Address").parent().type(newListingDetails.address);
@@ -33,12 +32,12 @@ describe("Listing", () => {
 
     cy.visit("/");
 
-    homePage.searchInp.eq(0).type(uniqueTitle);
+    homePage.searchInp.eq(0).type(newListingDetails.title);
     cy.contains("Start Search").click();
 
     cy.contains("More Info").click();
 
-    cy.contains(uniqueTitle);
+    cy.contains(newListingDetails.title);
     cy.contains(listingDetailsCheck.address);
     cy.contains(listingDetailsCheck.price);
     cy.contains(listingDetailsCheck.lotSize);

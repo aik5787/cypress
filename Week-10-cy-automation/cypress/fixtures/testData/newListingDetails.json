@@ -1,6 +1,6 @@
 {
-    "city": "Dacotious",
-    "title": "Test Real Estate Object",
+    "city": "South Dacotious",
+    "title": "Test Real Estate Listing",
     "state": "SD",
     "price": 555777,
     "address": "8985 S Durango dr",
@@ -10,6 +10,6 @@
     "garage":  1,
     "bathrooms": 2,
     "lotSize": 5600,
-    "description": "Sprucewood"
+    "description": "Spruceandelmwood"
   }
   

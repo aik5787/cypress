@@ -1,7 +1,7 @@
 import homePage from "../../page_objects/home.page";
 import featuredListingPage from "../../page_objects/featuredListings.page";
 import listingDetailsCheck from "../../fixtures/testData/listingDetailsCheck.json";
-import createNewListingPage from "../../page_objects/createNewListing.page";
+import newListingDetails from "../../fixtures/testData/newListingDetails.json"
 
 describe("Search", () => {
   before(() => {
@@ -19,9 +19,9 @@ describe("Search", () => {
   });
 
   it("Should search by keyword", () => {
-    homePage.searchInp.eq(0).type(Cypress.env('uniqueTitle'));
+    homePage.searchInp.eq(0).type(newListingDetails.title);
     cy.contains("Start Search").click();
-    cy.contains(Cypress.env('uniqueTitle'));
+    cy.contains(newListingDetails.title);
     cy.contains(listingDetailsCheck.city);
     cy.contains(listingDetailsCheck.price);
   });
@@ -55,7 +55,7 @@ describe("Search", () => {
     cy.contains("label", "City").parent().type(listingDetailsCheck.city);
     cy.contains("Start Search").click();
     cy.contains(listingDetailsCheck.city).should("have.length", 1);
-    cy.contains(Cypress.env('uniqueTitle'));
+    cy.contains(newListingDetails.title);
     cy.contains(listingDetailsCheck.address);
     cy.contains(listingDetailsCheck.state);
     cy.contains(listingDetailsCheck.sqft);
@@ -65,7 +65,7 @@ describe("Search", () => {
 
     cy.contains("More Info").click();
 
-    cy.contains(Cypress.env('uniqueTitle'));
+    cy.contains(newListingDetails.title);
     cy.contains(listingDetailsCheck.address);
     cy.contains(listingDetailsCheck.price);
     cy.contains(listingDetailsCheck.lotSize);
