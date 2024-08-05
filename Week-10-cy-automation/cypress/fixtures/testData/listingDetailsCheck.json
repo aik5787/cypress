@@ -1,0 +1,18 @@
+{
+  "keyWord": "Spruceandelmwood",
+  "title": "Test Real Estate Listing",
+  "city": "South Dacotious",
+  "price": "$ 555,777",
+  "address": "8985 S Durango dr",
+  "zipcode": "55555",
+  "state": "State: SD",
+  "sqft": "1122",
+  "bedrooms": "Bedrooms: 2",
+  "garage": "Garage: 1",
+  "bathrooms": "Bathrooms: 2",
+  "lotSize": "Lot Size: 5600",
+  "realtorName": "AdminTest AdminTest",
+  "description": "Spruceandelmwood",
+  "minPrice": 500000,
+  "maxPrice": 700000
+}
