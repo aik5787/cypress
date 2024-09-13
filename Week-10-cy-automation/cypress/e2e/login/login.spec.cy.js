@@ -2,12 +2,13 @@ import loginPage from "../../page_objects/login.page";
 import dashboardPage from "../../page_objects/dashboard.page";
 import userCredentials from "../../fixtures/testData/userCredentials.json";
 
+
 describe("Login", () => {
   beforeEach(() => {
     cy.visit("/");
   });
 
-  it("Should Log in with exusting account", () => {
+  it("Should Log in with exusting account",{ tags: '@smoke' }, () => {
     loginPage.login(userCredentials.realtor.email, userCredentials.realtor.password);
 
     dashboardPage.nameLbl.should("have.text", userCredentials.realtor.name);
