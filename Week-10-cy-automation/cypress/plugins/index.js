@@ -5,7 +5,6 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       mochawesome(on);
-      // другие настройки
     },
   },
 });
