@@ -19,3 +19,8 @@ jobs:
         with:
           browser: chrome
           working-directory: ./Week-10-cy-automation
+      - name: Upload Mochawesome reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: ./Week-10-cy-automation/mochawesome-report/
