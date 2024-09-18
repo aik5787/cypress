@@ -24,11 +24,11 @@ jobs:
       - name: Run Cypress tests
         run: npm run test:all:chrome
         working-directory: ./Week-10-cy-automation
-      - name: Upload Mochawesome reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: mochawesome-report
-          path: ./Week-10-cy-automation/mochawesome-report-chrome/
+      # - name: Upload Mochawesome reports
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: mochawesome-report
+      #     path: ./Week-10-cy-automation/mochawesome-report-chrome/
 
   Cypress-Run-Firefox:
     runs-on: ubuntu-latest
@@ -44,9 +44,9 @@ jobs:
       - name: Run Cypress tests
         run: npm run test:all:firefox
         working-directory: ./Week-10-cy-automation
-      - name: Upload Mochawesome reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: mochawesome-report
-          path: ./Week-10-cy-automation/mochawesome-report-firefox/
+      # - name: Upload Mochawesome reports
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: mochawesome-report
+      #     path: ./Week-10-cy-automation/mochawesome-report-firefox/
 
