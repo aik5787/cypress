@@ -25,13 +25,6 @@ jobs:
         run: npm install
         working-directory: ./Week-10-cy-automation
 
-      - name: Set up Cypress
-        uses: cypress-io/github-action@v6.6.1
-        with:
-          browser: chrome
-          working-directory: ./Week-10-cy-automation
-          start: false  # Prevent automatic test run
-
       - name: Run Cypress tests
         run: npm run test:all:chrome
         working-directory: ./Week-10-cy-automation
