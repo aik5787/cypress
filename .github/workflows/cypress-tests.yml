@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
-          path: ./Week-10-cy-automation/mochawesome-report/
+          path: ./Week-10-cy-automation/mochawesome-report-chrome/
 
   Cypress-Run-Firefox:
     runs-on: ubuntu-latest
@@ -48,5 +48,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
-          path: ./Week-10-cy-automation/mochawesome-report/
+          path: ./Week-10-cy-automation/mochawesome-report-firefox/
 
