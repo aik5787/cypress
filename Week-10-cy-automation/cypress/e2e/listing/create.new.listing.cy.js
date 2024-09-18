@@ -5,6 +5,7 @@ import createNewListingPage from "../../page_objects/createNewListing.page";
 import homePage from "../../page_objects/home.page";
 describe("Listing", () => {
   beforeEach(() => {
+    cy.errorHandler();
     cy.visit("/");
   });
   
