@@ -7,6 +7,7 @@ on:
         required: false
   pull_request:
     types: [opened, reopened, edited, synchronize]
+
 jobs:
   Cypress-Run:
     runs-on: ubuntu-latest
@@ -14,13 +15,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
-      - name: Cypress run
+
+      - name: Set up Cypress
         uses: cypress-io/github-action@v6.6.1
         with:
           browser: chrome
           working-directory: ./Week-10-cy-automation
+          start: false  # Prevent automatic test run
+
+      - name: Run Cypress tests
+        run: npm run test:all:chrome
+        working-directory: ./Week-10-cy-automation
+
       - name: Upload Mochawesome reports
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
           path: ./Week-10-cy-automation/mochawesome-report/
+
