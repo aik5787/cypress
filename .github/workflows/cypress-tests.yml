@@ -1,5 +1,4 @@
-name: E2E Tests
-
+name: E2E on Chrome
 on:
   workflow_dispatch:
     inputs:
@@ -8,9 +7,8 @@ on:
         required: false
   pull_request:
     types: [opened, reopened, edited, synchronize]
-
 jobs:
-  Cypress-Run-Chrome:
+  Cypress-Run:
     runs-on: ubuntu-latest
     name: E2E on Chrome
     steps:
@@ -24,29 +22,9 @@ jobs:
       - name: Run Cypress tests
         run: npm run test:all:chrome
         working-directory: ./Week-10-cy-automation
-      # - name: Upload Mochawesome reports
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: mochawesome-report
-      #     path: ./Week-10-cy-automation/mochawesome-report-chrome/
-
-  Cypress-Run-Firefox:
-    runs-on: ubuntu-latest
-    name: E2E on Firefox
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Set up Cypress
-        uses: cypress-io/github-action@v6.6.1
+        
+      - name: Upload Mochawesome reports
+        uses: actions/upload-artifact@v4
         with:
-          browser: firefox
-          working-directory: ./Week-10-cy-automation
-      - name: Run Cypress tests
-        run: npm run test:all:firefox
-        working-directory: ./Week-10-cy-automation
-      # - name: Upload Mochawesome reports
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: mochawesome-report
-      #     path: ./Week-10-cy-automation/mochawesome-report-firefox/
-
+          name: mochawesome-report
+          path: ./Week-10-cy-automation/mochawesome-report/
