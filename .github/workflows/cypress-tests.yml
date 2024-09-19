@@ -20,7 +20,7 @@ jobs:
           browser: chrome
           working-directory: ./Week-10-cy-automation
       - name: Run Cypress tests
-        run: npm run test:all:chrome
+        run: npm run test:all:firefox
         working-directory: ./Week-10-cy-automation
         
       - name: Upload Mochawesome reports

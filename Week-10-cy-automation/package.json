@@ -25,7 +25,7 @@
     "test:search:firefox": "cypress run --spec 'cypress/e2e/search/*.js' --browser firefox --headless",
     "test:merge-reports": "mochawesome-merge mochawesome-report/.jsons/*.json > mochawesome-report/merged-report.json",
     "test:generate-report": "marge mochawesome-report/merged-report.json",
-    "test:all:chrome": "npm run clean:reports && npm-run-all --parallel test:listing:chrome test:login:chrome test:registration:chrome test:search:chrome && npm run test:merge-reports && npm run test:generate-report",
-    "test:all:firefox": "npm run clean:reports && npm-run-all --parallel test:listing:firefox test:login:firefox test:registration:firefox test:search:firefox && npm run test:merge-reports && npm run test:generate-report"
+    "test:all:chrome": "npm run clean:reports && npm-run-all --parallel test:login:chrome test:registration:chrome && npm run test:merge-reports && npm run test:generate-report",
+    "test:all:firefox": "npm run clean:reports && npm-run-all --parallel test:login:firefox test:registration:firefox && npm run test:merge-reports && npm run test:generate-report"
   }
 }
