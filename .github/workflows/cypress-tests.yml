@@ -10,10 +10,12 @@ on:
 jobs:
   Cypress-Run:
     runs-on: macos-latest
-    name: E2E on Chrome
+    name: E2E on Firefox
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Install Firefox
+        run: brew install --cask firefox 
       - name: Set up Cypress
         uses: cypress-io/github-action@v6.6.1
         with:
