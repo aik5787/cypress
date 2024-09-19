@@ -17,10 +17,11 @@ jobs:
       - name: Set up Cypress
         uses: cypress-io/github-action@v6.6.1
         with:
-          browser: chrome
+          browser: firefox
           working-directory: ./Week-10-cy-automation
       - name: Run Cypress tests
         run: npm run test:all:firefox
+        headless: true
         working-directory: ./Week-10-cy-automation
         
       - name: Upload Mochawesome reports
