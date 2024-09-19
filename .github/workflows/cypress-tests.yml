@@ -23,9 +23,9 @@ jobs:
         run: npm run test:all:firefox
         working-directory: ./Week-10-cy-automation
         
-      - name: Upload Mochawesome reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: mochawesome-report
-          path: ./Week-10-cy-automation/mochawesome-report/
+      # - name: Upload Mochawesome reports
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: mochawesome-report
+      #     path: ./Week-10-cy-automation/mochawesome-report/
 
