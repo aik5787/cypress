@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2024-09-19T02:12:20.176Z",
-    "end": "2024-09-19T02:12:35.030Z",
-    "duration": 14854
+    "start": "2024-09-19T02:58:35.992Z",
+    "end": "2024-09-19T02:58:49.060Z",
+    "duration": 13068
   },
   "results": [
     {
-      "uuid": "51d2998a-5dcd-4b20-9952-8e514b828a7c",
+      "uuid": "9cbc9a8b-a4c0-49d1-920b-26a957f57595",
       "title": "",
       "fullFile": "cypress/e2e/login/login.spec.cy.js",
       "file": "cypress/e2e/login/login.spec.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+          "uuid": "2d90ccd6-785f-46cb-bbca-329ae0284f4a",
           "title": "Login",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should Log in with exusting account",
               "fullTitle": "Login Should Log in with exusting account",
               "timedOut": null,
-              "duration": 2393,
+              "duration": 1825,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "_login.default.login(_userCredentials.default.realtor.email, _userCredentials.default.realtor.password);\n_dashboard.default.nameLbl.should(\"have.text\", _userCredentials.default.realtor.name);\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.realtor.role);\ncy.title().should(\"eq\", \"User: Profile | Delek Homes\");",
               "err": {},
-              "uuid": "62196eb5-2839-472a-80ed-374acfe648bf",
-              "parentUUID": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+              "uuid": "9f8127a7-f710-43a1-ab54-b56221155f44",
+              "parentUUID": "2d90ccd6-785f-46cb-bbca-329ae0284f4a",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Should Log out",
               "fullTitle": "Login Should Log out",
               "timedOut": null,
-              "duration": 1544,
+              "duration": 1219,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.login();\n_dashboard.default.accountIcn.click();\ncy.contains(\"Logout\").click();\ncy.url().should(\"include\", \"auth/login\");\ncy.title().should(\"eq\", \"Login | Delek Homes\");",
               "err": {},
-              "uuid": "d23055db-3152-45df-b694-c41850c281ce",
-              "parentUUID": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+              "uuid": "295f315b-3a45-4fcb-bf9e-05ce3f3beb26",
+              "parentUUID": "2d90ccd6-785f-46cb-bbca-329ae0284f4a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "62196eb5-2839-472a-80ed-374acfe648bf",
-            "d23055db-3152-45df-b694-c41850c281ce"
+            "9f8127a7-f710-43a1-ab54-b56221155f44",
+            "295f315b-3a45-4fcb-bf9e-05ce3f3beb26"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3937,
+          "duration": 3044,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -95,7 +95,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "78e7c3e0-b29d-4e8a-935b-72f18487b45d",
+      "uuid": "9817058b-6400-441d-8736-7cce14625148",
       "title": "",
       "fullFile": "cypress/e2e/registration/api.registration.cy.js",
       "file": "cypress/e2e/registration/api.registration.cy.js",
@@ -104,7 +104,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e24114da-d7d3-4efc-9920-9e6ce5efacb8",
+          "uuid": "779aabcd-fc6a-4c89-a43c-ee6b766302d7",
           "title": "Registration",
           "fullFile": "",
           "file": "",
@@ -115,7 +115,7 @@
               "title": "Should register a new account via API",
               "fullTitle": "Registration Should register a new account via API",
               "timedOut": null,
-              "duration": 2026,
+              "duration": 1515,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -124,20 +124,20 @@
               "context": null,
               "code": "cy.registerNewUser(firstName, lastName, email, password);\ncy.deleteNewUser();",
               "err": {},
-              "uuid": "93f02a73-d0e0-4407-b3db-9f9c1c1066c2",
-              "parentUUID": "e24114da-d7d3-4efc-9920-9e6ce5efacb8",
+              "uuid": "6a157d05-ca94-4ab0-8488-89b795930387",
+              "parentUUID": "779aabcd-fc6a-4c89-a43c-ee6b766302d7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "93f02a73-d0e0-4407-b3db-9f9c1c1066c2"
+            "6a157d05-ca94-4ab0-8488-89b795930387"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2026,
+          "duration": 1515,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -153,7 +153,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "88b18fda-6883-4294-a949-f371a0e54f72",
+      "uuid": "88da4f1c-569d-4e41-8c3c-84314f267923",
       "title": "",
       "fullFile": "cypress/e2e/registration/registration.spec.cy.js",
       "file": "cypress/e2e/registration/registration.spec.cy.js",
@@ -162,7 +162,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+          "uuid": "74b8371a-ac54-4f2f-a411-a9648209ba40",
           "title": "Registration",
           "fullFile": "",
           "file": "",
@@ -173,7 +173,7 @@
               "title": "Should register a new account",
               "fullTitle": "Registration Should register a new account",
               "timedOut": null,
-              "duration": 2282,
+              "duration": 2137,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -182,8 +182,8 @@
               "context": null,
               "code": "cy.intercept('POST', '/api/users/registration').as('registerUser');\n_registration_page.default.registration(firstName, lastName, email, password);\ncy.wait('@registerUser').then(interception => {\n  const newUserId = interception.response.body.user.id;\n  Cypress.env(\"newUserId\", newUserId);\n  window.localStorage.setItem(\"accessToken\", interception.response.body.accessToken);\n});\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.user.role);\n_dashboard.default.nameLbl.should(\"have.text\", `${firstName}  ${lastName}`);\ncy.title().should(\"eq\", \"User: Profile | Delek Homes\");",
               "err": {},
-              "uuid": "387e33c2-c314-4484-a13e-c31cafa69fd7",
-              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "uuid": "e66e3c26-c8f0-4527-ab9c-bd7d1646ff55",
+              "parentUUID": "74b8371a-ac54-4f2f-a411-a9648209ba40",
               "isHook": false,
               "skipped": false
             },
@@ -191,7 +191,7 @@
               "title": "Should not register with an already existing email account",
               "fullTitle": "Registration Should not register with an already existing email account",
               "timedOut": null,
-              "duration": 1999,
+              "duration": 1605,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -200,8 +200,8 @@
               "context": null,
               "code": "_registration_page.default.registration(firstName, lastName, _userCredentials.default.realtor.email, password);\n_registration_page.default.alertMssg.should(\"exist\").and(\"have.text\", _registrationValidationErrors.default.validationFailed);",
               "err": {},
-              "uuid": "7df87ed7-e68c-492b-a841-bc7dc6488ead",
-              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "uuid": "83de8e1f-8055-4830-a2d8-87b46b895443",
+              "parentUUID": "74b8371a-ac54-4f2f-a411-a9648209ba40",
               "isHook": false,
               "skipped": false
             },
@@ -209,7 +209,7 @@
               "title": "Should not register without filling in required fields",
               "fullTitle": "Registration Should not register without filling in required fields",
               "timedOut": null,
-              "duration": 328,
+              "duration": 325,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -218,8 +218,8 @@
               "context": null,
               "code": "_registration_page.default.submitBtn.click();\ncy.contains(_registrationValidationErrors.default.firstNameRequired);\ncy.contains(_registrationValidationErrors.default.lastNameRequired);\ncy.contains(_registrationValidationErrors.default.emailRequired);\ncy.contains(_registrationValidationErrors.default.passwordRequired);",
               "err": {},
-              "uuid": "cf4d5c0e-403b-474a-9dd6-1e2657c699f9",
-              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "uuid": "03e1cd1a-2d8b-4eaa-9f6a-e15173516ef4",
+              "parentUUID": "74b8371a-ac54-4f2f-a411-a9648209ba40",
               "isHook": false,
               "skipped": false
             },
@@ -227,7 +227,7 @@
               "title": "Should overwrite user role",
               "fullTitle": "Registration Should overwrite user role",
               "timedOut": null,
-              "duration": 1092,
+              "duration": 951,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -236,23 +236,23 @@
               "context": null,
               "code": "cy.overwriteRole();\ncy.login(email, password);\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.realtor.role);",
               "err": {},
-              "uuid": "8ae7385e-dc60-4234-b61f-cfc08045feb7",
-              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "uuid": "0e002ba2-7c09-4a2c-ac52-5f746d7d2686",
+              "parentUUID": "74b8371a-ac54-4f2f-a411-a9648209ba40",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "387e33c2-c314-4484-a13e-c31cafa69fd7",
-            "7df87ed7-e68c-492b-a841-bc7dc6488ead",
-            "cf4d5c0e-403b-474a-9dd6-1e2657c699f9",
-            "8ae7385e-dc60-4234-b61f-cfc08045feb7"
+            "e66e3c26-c8f0-4527-ab9c-bd7d1646ff55",
+            "83de8e1f-8055-4830-a2d8-87b46b895443",
+            "03e1cd1a-2d8b-4eaa-9f6a-e15173516ef4",
+            "0e002ba2-7c09-4a2c-ac52-5f746d7d2686"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5701,
+          "duration": 5018,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

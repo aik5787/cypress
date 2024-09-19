@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2024-09-19T02:12:20.176Z",
-    "end": "2024-09-19T02:12:24.216Z",
-    "duration": 4040,
+    "start": "2024-09-19T02:58:35.992Z",
+    "end": "2024-09-19T02:58:39.173Z",
+    "duration": 3181,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "51d2998a-5dcd-4b20-9952-8e514b828a7c",
+      "uuid": "9cbc9a8b-a4c0-49d1-920b-26a957f57595",
       "title": "",
       "fullFile": "cypress/e2e/login/login.spec.cy.js",
       "file": "cypress/e2e/login/login.spec.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+          "uuid": "2d90ccd6-785f-46cb-bbca-329ae0284f4a",
           "title": "Login",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should Log in with exusting account",
               "fullTitle": "Login Should Log in with exusting account",
               "timedOut": null,
-              "duration": 2393,
+              "duration": 1825,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "_login.default.login(_userCredentials.default.realtor.email, _userCredentials.default.realtor.password);\n_dashboard.default.nameLbl.should(\"have.text\", _userCredentials.default.realtor.name);\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.realtor.role);\ncy.title().should(\"eq\", \"User: Profile | Delek Homes\");",
               "err": {},
-              "uuid": "62196eb5-2839-472a-80ed-374acfe648bf",
-              "parentUUID": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+              "uuid": "9f8127a7-f710-43a1-ab54-b56221155f44",
+              "parentUUID": "2d90ccd6-785f-46cb-bbca-329ae0284f4a",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Should Log out",
               "fullTitle": "Login Should Log out",
               "timedOut": null,
-              "duration": 1544,
+              "duration": 1219,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.login();\n_dashboard.default.accountIcn.click();\ncy.contains(\"Logout\").click();\ncy.url().should(\"include\", \"auth/login\");\ncy.title().should(\"eq\", \"Login | Delek Homes\");",
               "err": {},
-              "uuid": "d23055db-3152-45df-b694-c41850c281ce",
-              "parentUUID": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+              "uuid": "295f315b-3a45-4fcb-bf9e-05ce3f3beb26",
+              "parentUUID": "2d90ccd6-785f-46cb-bbca-329ae0284f4a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "62196eb5-2839-472a-80ed-374acfe648bf",
-            "d23055db-3152-45df-b694-c41850c281ce"
+            "9f8127a7-f710-43a1-ab54-b56221155f44",
+            "295f315b-3a45-4fcb-bf9e-05ce3f3beb26"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3937,
+          "duration": 3044,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

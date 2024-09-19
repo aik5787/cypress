@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2024-09-19T02:12:23.538Z",
-    "end": "2024-09-19T02:12:25.624Z",
-    "duration": 2086,
+    "start": "2024-09-19T02:58:38.974Z",
+    "end": "2024-09-19T02:58:40.518Z",
+    "duration": 1544,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "78e7c3e0-b29d-4e8a-935b-72f18487b45d",
+      "uuid": "9817058b-6400-441d-8736-7cce14625148",
       "title": "",
       "fullFile": "cypress/e2e/registration/api.registration.cy.js",
       "file": "cypress/e2e/registration/api.registration.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e24114da-d7d3-4efc-9920-9e6ce5efacb8",
+          "uuid": "779aabcd-fc6a-4c89-a43c-ee6b766302d7",
           "title": "Registration",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Should register a new account via API",
               "fullTitle": "Registration Should register a new account via API",
               "timedOut": null,
-              "duration": 2026,
+              "duration": 1515,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.registerNewUser(firstName, lastName, email, password);\ncy.deleteNewUser();",
               "err": {},
-              "uuid": "93f02a73-d0e0-4407-b3db-9f9c1c1066c2",
-              "parentUUID": "e24114da-d7d3-4efc-9920-9e6ce5efacb8",
+              "uuid": "6a157d05-ca94-4ab0-8488-89b795930387",
+              "parentUUID": "779aabcd-fc6a-4c89-a43c-ee6b766302d7",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "93f02a73-d0e0-4407-b3db-9f9c1c1066c2"
+            "6a157d05-ca94-4ab0-8488-89b795930387"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2026,
+          "duration": 1515,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
