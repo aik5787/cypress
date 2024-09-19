@@ -1,0 +1,298 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-09-19T02:12:20.176Z",
+    "end": "2024-09-19T02:12:35.030Z",
+    "duration": 14854
+  },
+  "results": [
+    {
+      "uuid": "51d2998a-5dcd-4b20-9952-8e514b828a7c",
+      "title": "",
+      "fullFile": "cypress/e2e/login/login.spec.cy.js",
+      "file": "cypress/e2e/login/login.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should Log in with exusting account",
+              "fullTitle": "Login Should Log in with exusting account",
+              "timedOut": null,
+              "duration": 2393,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_login.default.login(_userCredentials.default.realtor.email, _userCredentials.default.realtor.password);\n_dashboard.default.nameLbl.should(\"have.text\", _userCredentials.default.realtor.name);\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.realtor.role);\ncy.title().should(\"eq\", \"User: Profile | Delek Homes\");",
+              "err": {},
+              "uuid": "62196eb5-2839-472a-80ed-374acfe648bf",
+              "parentUUID": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should Log out",
+              "fullTitle": "Login Should Log out",
+              "timedOut": null,
+              "duration": 1544,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login();\n_dashboard.default.accountIcn.click();\ncy.contains(\"Logout\").click();\ncy.url().should(\"include\", \"auth/login\");\ncy.title().should(\"eq\", \"Login | Delek Homes\");",
+              "err": {},
+              "uuid": "d23055db-3152-45df-b694-c41850c281ce",
+              "parentUUID": "8c607132-1d44-4672-a40b-1ccfbdfc58aa",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "62196eb5-2839-472a-80ed-374acfe648bf",
+            "d23055db-3152-45df-b694-c41850c281ce"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3937,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "78e7c3e0-b29d-4e8a-935b-72f18487b45d",
+      "title": "",
+      "fullFile": "cypress/e2e/registration/api.registration.cy.js",
+      "file": "cypress/e2e/registration/api.registration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e24114da-d7d3-4efc-9920-9e6ce5efacb8",
+          "title": "Registration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should register a new account via API",
+              "fullTitle": "Registration Should register a new account via API",
+              "timedOut": null,
+              "duration": 2026,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.registerNewUser(firstName, lastName, email, password);\ncy.deleteNewUser();",
+              "err": {},
+              "uuid": "93f02a73-d0e0-4407-b3db-9f9c1c1066c2",
+              "parentUUID": "e24114da-d7d3-4efc-9920-9e6ce5efacb8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "93f02a73-d0e0-4407-b3db-9f9c1c1066c2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2026,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "88b18fda-6883-4294-a949-f371a0e54f72",
+      "title": "",
+      "fullFile": "cypress/e2e/registration/registration.spec.cy.js",
+      "file": "cypress/e2e/registration/registration.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+          "title": "Registration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should register a new account",
+              "fullTitle": "Registration Should register a new account",
+              "timedOut": null,
+              "duration": 2282,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('POST', '/api/users/registration').as('registerUser');\n_registration_page.default.registration(firstName, lastName, email, password);\ncy.wait('@registerUser').then(interception => {\n  const newUserId = interception.response.body.user.id;\n  Cypress.env(\"newUserId\", newUserId);\n  window.localStorage.setItem(\"accessToken\", interception.response.body.accessToken);\n});\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.user.role);\n_dashboard.default.nameLbl.should(\"have.text\", `${firstName}  ${lastName}`);\ncy.title().should(\"eq\", \"User: Profile | Delek Homes\");",
+              "err": {},
+              "uuid": "387e33c2-c314-4484-a13e-c31cafa69fd7",
+              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not register with an already existing email account",
+              "fullTitle": "Registration Should not register with an already existing email account",
+              "timedOut": null,
+              "duration": 1999,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_registration_page.default.registration(firstName, lastName, _userCredentials.default.realtor.email, password);\n_registration_page.default.alertMssg.should(\"exist\").and(\"have.text\", _registrationValidationErrors.default.validationFailed);",
+              "err": {},
+              "uuid": "7df87ed7-e68c-492b-a841-bc7dc6488ead",
+              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not register without filling in required fields",
+              "fullTitle": "Registration Should not register without filling in required fields",
+              "timedOut": null,
+              "duration": 328,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_registration_page.default.submitBtn.click();\ncy.contains(_registrationValidationErrors.default.firstNameRequired);\ncy.contains(_registrationValidationErrors.default.lastNameRequired);\ncy.contains(_registrationValidationErrors.default.emailRequired);\ncy.contains(_registrationValidationErrors.default.passwordRequired);",
+              "err": {},
+              "uuid": "cf4d5c0e-403b-474a-9dd6-1e2657c699f9",
+              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should overwrite user role",
+              "fullTitle": "Registration Should overwrite user role",
+              "timedOut": null,
+              "duration": 1092,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.overwriteRole();\ncy.login(email, password);\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.realtor.role);",
+              "err": {},
+              "uuid": "8ae7385e-dc60-4234-b61f-cfc08045feb7",
+              "parentUUID": "640f11e6-831f-4b68-9594-b30f7a55c6e6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "387e33c2-c314-4484-a13e-c31cafa69fd7",
+            "7df87ed7-e68c-492b-a841-bc7dc6488ead",
+            "cf4d5c0e-403b-474a-9dd6-1e2657c699f9",
+            "8ae7385e-dc60-4234-b61f-cfc08045feb7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5701,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report-firefox/.jsons",
+        "overwrite": false,
+        "showPassed": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-19T01:42:53.937Z",
+    "end": "2024-09-19T01:42:54.958Z",
+    "duration": 1021,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "825926b1-a69e-424a-b23e-3becc9705a96",
+      "title": "",
+      "fullFile": "cypress/e2e/registration/api.registration.cy.js",
+      "file": "cypress/e2e/registration/api.registration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "815d3aef-b31d-4586-bd87-412f38c41918",
+          "title": "Registration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should register a new account via API",
+              "fullTitle": "Registration Should register a new account via API",
+              "timedOut": null,
+              "duration": 1004,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.registerNewUser(firstName, lastName, email, password);\ncy.deleteNewUser();",
+              "err": {},
+              "uuid": "74c13bed-31a7-47b5-b3cb-70080d1cb6a4",
+              "parentUUID": "815d3aef-b31d-4586-bd87-412f38c41918",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "74c13bed-31a7-47b5-b3cb-70080d1cb6a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1004,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "showPassed": true,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
