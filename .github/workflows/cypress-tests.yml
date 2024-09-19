@@ -9,7 +9,7 @@ on:
     types: [opened, reopened, edited, synchronize]
 jobs:
   Cypress-Run:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: E2E on Chrome
     steps:
       - name: Checkout
