@@ -28,8 +28,8 @@
   "test:merge-reports-firefox": "mochawesome-merge mochawesome-report-firefox/.jsons/*.json > mochawesome-report-firefox/merged-report-firefox.json",
   "test:generate-report-chrome": "marge mochawesome-report-chrome/merged-report-chrome.json -o mochawesome-report-chrome",
   "test:generate-report-firefox": "marge mochawesome-report-firefox/merged-report-firefox.json -o mochawesome-report-firefox",
-  "test:all:chrome": "npm run clean:reports-chrome && npm-run-all --parallel test:login:chrome test:registration:chrome test:listing:chrome test:search:chrome && npm run test:merge-reports-chrome && npm run test:generate-report-chrome",
-  "test:all:firefox": "npm run clean:reports-firefox && npm-run-all --parallel test:login:firefox test:registration:firefox test:listing:firefox test:search:firefox && npm run test:merge-reports-firefox && npm run test:generate-report-firefox",
+  "test:all:chrome": "npm run clean:reports-chrome && npm-run-all --parallel --continue-on-error test:login:chrome test:registration:chrome test:listing:chrome test:search:chrome && npm run test:merge-reports-chrome && npm run test:generate-report-chrome",
+  "test:all:firefox": "npm run clean:reports-firefox && npm-run-all --parallel --continue-on-error test:login:firefox test:registration:firefox test:listing:firefox test:search:firefox && npm run test:merge-reports-firefox && npm run test:generate-report-firefox",
   "test:chrome": "npm run clean:reports-chrome && CYPRESS_REPORT_DIR=mochawesome-report-chrome npx cypress run --browser chrome && npm run test:merge-reports-chrome && npm run test:generate-report-chrome",
   "test:firefox": "npm run clean:reports-firefox && CYPRESS_REPORT_DIR=mochawesome-report-firefox npx cypress run --browser firefox --headless && npm run test:merge-reports-firefox && npm run test:generate-report-firefox"
 }
