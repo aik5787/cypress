@@ -47,6 +47,6 @@ describe("Listing", () => {
     cy.contains(listingDetailsCheck.sqft);
     cy.contains(listingDetailsCheck.bathrooms);
     cy.contains(listingDetailsCheck.description);
-    // cy.get('img[src*="houseimage"]').should("be.visible").and("have.attr", "src").and("include", "houseimage");
+    cy.get('img[src*="houseimage"]').should("be.visible").and("have.attr", "src").and("include", "houseimage");
   });
 });
