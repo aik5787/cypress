@@ -11,7 +11,7 @@ on:
 
 jobs:
   Cypress-Run-Chrome:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     name: E2E on Chrome
     steps:
       - name: Checkout
