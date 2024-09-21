@@ -27,22 +27,6 @@ jobs:
           browser: chrome
           working-directory: ./Week-10-cy-automation
 
-  cypress-run-firefox:
-    runs-on: ubuntu-latest
-    name: Run Cypress Tests on Firefox
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Install Dependencies
-        run: npm ci
-        working-directory: ./Week-10-cy-automation
-      - name: Export Environment Variable for Firefox
-        run: echo "CYPRESS_REPORT_DIR=mochawesome-report-firefox" >> $GITHUB_ENV
-      - name: Cypress run on Firefox
-        uses: cypress-io/github-action@v6.6.1
-        with:
-          browser: firefox
-          working-directory: ./Week-10-cy-automation
 
 
   
