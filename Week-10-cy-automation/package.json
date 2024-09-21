@@ -14,7 +14,7 @@
     "rimraf": "^6.0.1"
   },
 "scripts": {
-  "clean:reports-chrome": "rimraf mochawesome-report-chrome/.jsons && rimraf mochawesome-report-chrome/merged-report-chrome.json && rimraf mochawesome-report-chrome/merged-report-chrome.html",
+  "clean:reports-chrome": "rimraf mochawesome-report-chrome/.jsons && rimraf mochawesome-report-chrome/merged-report-chrome.json && rimraf mochawesome-report-chrome/merged-report-chrome.html && [ -f mochawesome-report-chrome/downloads.html ] && rimraf mochawesome-report-chrome/downloads.html || true",
   "clean:reports-firefox": "rimraf mochawesome-report-firefox/.jsons && rimraf mochawesome-report-firefox/merged-report-firefox.json && rimraf mochawesome-report-firefox/merged-report-firefox.html",
   "test:listing:chrome": "CYPRESS_REPORT_DIR=mochawesome-report-chrome cypress run --spec 'cypress/e2e/listing/*.js' --browser chrome --headless --reporter mochawesome --reporter-options reportDir=mochawesome-report-chrome",
   "test:login:chrome": "CYPRESS_REPORT_DIR=mochawesome-report-chrome cypress run --spec 'cypress/e2e/login/*.js' --browser chrome --headless --reporter mochawesome --reporter-options reportDir=mochawesome-report-chrome",

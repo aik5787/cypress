@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-21T13:26:05.168Z",
+    "end": "2024-09-21T13:26:11.386Z",
+    "duration": 6218,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2faec5e8-ccd4-4e8c-8c72-674392c3b46a",
+      "title": "",
+      "fullFile": "cypress/e2e/listing/create.new.listing.cy.js",
+      "file": "cypress/e2e/listing/create.new.listing.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "026793e0-10b7-43ab-9172-2262a314bdc5",
+          "title": "Listing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should create a new listing",
+              "fullTitle": "Listing Should create a new listing",
+              "timedOut": null,
+              "duration": 6179,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(_userCredentials.default.admin.email, _userCredentials.default.admin.password);\ncy.visit(\"/dashboard/real-estate/new\");\ncy.contains(\"label\", \"Title\").parent().type(_newListingDetails.default.title);\ncy.contains(\"label\", \"Description\").parent().type(_newListingDetails.default.description);\ncy.contains(\"label\", \"City\").parent().type(_newListingDetails.default.city);\ncy.contains(\"label\", \"Address\").parent().type(_newListingDetails.default.address);\ncy.contains(\"label\", \"Zip Code\").parent().type(_newListingDetails.default.zipcode);\ncy.contains(\"label\", \"State\").parent().click();\n_createNewListing.default.stateSelect.click();\n_createNewListing.default.imageSelect.attachFile(\"images/houseimage.jpg\");\ncy.contains(\"label\", \"Price\").parent().type(_newListingDetails.default.price);\ncy.contains(\"label\", \"Bedrooms\").parent().type(_newListingDetails.default.bedrooms);\ncy.contains(\"label\", \"Bathrooms\").parent().type(_newListingDetails.default.bathrooms);\ncy.contains(\"label\", \"Garage\").parent().type(_newListingDetails.default.garage);\ncy.contains(\"label\", \"Sqft\").parent().type(_newListingDetails.default.sqft);\ncy.contains(\"label\", \"Lot Size\").parent().type(_newListingDetails.default.lotSize);\n_createNewListing.default.isPublished.click();\ncy.contains(\"button\", \"Post\").click();\ncy.visit(\"/\");\n_home.default.searchInp.eq(0).type(_newListingDetails.default.title);\ncy.contains(\"Start Search\").click();\ncy.contains(\"More Info\").click();\ncy.contains(_newListingDetails.default.title);\ncy.contains(_listingDetailsCheck.default.address);\ncy.contains(_listingDetailsCheck.default.price);\ncy.contains(_listingDetailsCheck.default.lotSize);\ncy.contains(_listingDetailsCheck.default.garage);\ncy.contains(_listingDetailsCheck.default.bedrooms);\ncy.contains(_listingDetailsCheck.default.sqft);\ncy.contains(_listingDetailsCheck.default.bathrooms);\ncy.contains(_listingDetailsCheck.default.description);\n// cy.get('img[src*=\"houseimage\"]').should(\"be.visible\").and(\"have.attr\", \"src\").and(\"include\", \"houseimage\");",
+              "err": {},
+              "uuid": "028fe443-7ad6-47ce-b95c-e0a0535a8e45",
+              "parentUUID": "026793e0-10b7-43ab-9172-2262a314bdc5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "028fe443-7ad6-47ce-b95c-e0a0535a8e45"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6179,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "showPassed": true,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
