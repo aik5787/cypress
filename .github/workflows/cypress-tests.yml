@@ -22,7 +22,7 @@ jobs:
           browser: chrome
           working-directory: ./Week-10-cy-automation
       - name: Run Cypress tests
-        run: npm run test:chrome
+        run: npm run test:all:chrome
         working-directory: ./Week-10-cy-automation
       - name: Upload Mochawesome reports chrome
         uses: actions/upload-artifact@v4
@@ -30,4 +30,27 @@ jobs:
           name: mochawesome-report-chrome
           path: ./Week-10-cy-automation/mochawesome-report-chrome/
 
+  Cypress-Run-Firefox:
+    runs-on: macos-latest
+    name: E2E on Firefox
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Install Firefox
+        run: brew install --cask firefox 
+      - name: Set up Cypress
+        uses: cypress-io/github-action@v6.6.1
+        with:
+          browser: firefox
+          working-directory: ./Week-10-cy-automation
+      - name: Run Cypress tests
+        run: npm run test:all:firefox
+        working-directory: ./Week-10-cy-automation
+      - name: Upload Mochawesome reports firefox
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report-firefox
+          path: ./Week-10-cy-automation/mochawesome-report-firefox/
+
+  
 
