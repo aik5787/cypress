@@ -29,6 +29,7 @@ jobs:
         with:
           name: mochawesome-report-chrome
           path: ./Week-10-cy-automation/mochawesome-report-chrome/
+        if: always() 
 
   Cypress-Run-Firefox:
     runs-on: macos-latest
@@ -51,6 +52,7 @@ jobs:
         with:
           name: mochawesome-report-firefox
           path: ./Week-10-cy-automation/mochawesome-report-firefox/
+        if: always() 
 
   
 
