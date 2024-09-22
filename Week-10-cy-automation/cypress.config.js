@@ -7,7 +7,7 @@ module.exports = defineConfig({
     viewportHeight: 1200,
     reporter: "cypress-mochawesome-reporter",
     reporterOptions: {
-      reportDir: process.env.CYPRESS_REPORT_DIR,
+      reportDir: mochawesome-report-chrome,
       overwrite: true,
       showPassed: true,
       html: false, 

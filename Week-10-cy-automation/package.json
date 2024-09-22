@@ -34,9 +34,7 @@
     "test:all:firefox": "npm run clean:reports-firefox && concurrently --kill-others-on-fail false \"npm run test:login:firefox\" \"npm run test:registration:firefox\" \"npm run test:listing:firefox\" \"npm run test:search:firefox\"",
     "test:all:firefox:report": "npm-run-all --continue-on-error test:all:firefox test:merge-reports-firefox test:generate-report-firefox",
     "test:chrome": "npm run clean:reports-chrome && CYPRESS_REPORT_DIR=mochawesome-report-chrome npx cypress run --browser chrome && npm run test:merge-reports-chrome && npm run test:generate-report-chrome",
-    "test:firefox": "npm run clean:reports-firefox && CYPRESS_REPORT_DIR=mochawesome-report-firefox npx cypress run --browser firefox --headless && npm run test:merge-reports-firefox && npm run test:generate-report-firefox",
-    "test:merge-reports-cicd-fail-chrome": "mochawesome-merge cypress/reports/html/.jsons/*.json > cypress/reports/html/.jsons/merged-report-chrome.json",
-    "test:generate-report-cicd-fail-chrome": "marge cypress/reports/html/.jsons/merged-report-chrome.json -o cypress/reports/html/.jsons"
+    "test:firefox": "npm run clean:reports-firefox && CYPRESS_REPORT_DIR=mochawesome-report-firefox npx cypress run --browser firefox --headless && npm run test:merge-reports-firefox && npm run test:generate-report-firefox"
   }
 }
 
