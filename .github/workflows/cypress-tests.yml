@@ -22,7 +22,7 @@ jobs:
           browser: chrome
           working-directory: ./Week-10-cy-automation
       - name: Run Cypress tests
-        run: npm run test:all:chrome:report
+        run: CYPRESS_REPORT_DIR=mochawesome-report-chrome npm run test:all:chrome:report
         working-directory: ./Week-10-cy-automation
       - name: Upload Mochawesome reports chrome
         uses: actions/upload-artifact@v4
@@ -45,7 +45,7 @@ jobs:
           browser: firefox
           working-directory: ./Week-10-cy-automation
       - name: Run Cypress tests
-        run: npm run test:all:firefox:report
+        run: CYPRESS_REPORT_DIR=mochawesome-report-firefox npm run test:all:firefox:report
         working-directory: ./Week-10-cy-automation
       - name: Upload Mochawesome reports firefox
         uses: actions/upload-artifact@v4
