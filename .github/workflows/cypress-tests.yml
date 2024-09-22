@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report-chrome
-          path: /home/runner/work/19-Oleksandr-Kalinovskyi/19-Oleksandr-Kalinovskyi/Week-10-cy-automation/cypress/reports/html/.jsons/
+          path: ./Week-10-cy-automation/cypress/reports/html/.jsons/
 
   Cypress-Run-Firefox:
     runs-on: macos-latest
@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report-firefox
-          path: /home/runner/work/19-Oleksandr-Kalinovskyi/19-Oleksandr-Kalinovskyi/Week-10-cy-automation/cypress/reports/html/.jsons/
+          path: ./Week-10-cy-automation/cypress/reports/html/.jsons/
 
   
 
