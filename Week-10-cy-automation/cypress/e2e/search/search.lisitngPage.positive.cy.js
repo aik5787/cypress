@@ -72,7 +72,7 @@ describe("Search", () => {
     cy.contains(listingDetailsCheck.bedrooms);
     cy.contains(listingDetailsCheck.sqft);
     cy.contains(listingDetailsCheck.bathrooms);
-    cy.contains(listingDetailsCheck.description);
+    cy.contains(listingDetailsCheck.descriptio);
   });
 
   it("Should search by price", () => {
