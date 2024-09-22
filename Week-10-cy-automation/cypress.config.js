@@ -11,7 +11,8 @@ module.exports = defineConfig({
       overwrite: true,
       showPassed: true,
       html: false, 
-      json: true, 
+      json: true,
+      alwaysGenerateReport: true 
     },
     setupNodeEvents(on, config) {
       require("@cypress/grep/src/plugin")(config);

@@ -15,8 +15,8 @@
     "rimraf": "^6.0.1"
   },
   "scripts": {
-    "clean:reports-chrome": "rimraf mochawesome-report-chrome/.jsons && rimraf mochawesome-report-chrome/merged-report-chrome.json && rimraf mochawesome-report-chrome/merged-report-chrome.html",
-    "clean:reports-firefox": "rimraf mochawesome-report-firefox/.jsons && rimraf mochawesome-report-firefox/merged-report-firefox.json && rimraf mochawesome-report-firefox/merged-report-firefox.html",
+    "clean:reports-chrome": "rimraf downloads && rimraf mochawesome-report-chrome/.jsons && rimraf mochawesome-report-chrome/merged-report-chrome.json && rimraf mochawesome-report-chrome/merged-report-chrome.html",
+    "clean:reports-firefox": "rimraf downloads && rimraf mochawesome-report-firefox/.jsons && rimraf mochawesome-report-firefox/merged-report-firefox.json && rimraf mochawesome-report-firefox/merged-report-firefox.html",
     "test:listing:chrome": "CYPRESS_REPORT_DIR=mochawesome-report-chrome cypress run --spec 'cypress/e2e/listing/*.js' --browser chrome --reporter mochawesome --reporter-options reportDir=mochawesome-report-chrome",
     "test:login:chrome": "CYPRESS_REPORT_DIR=mochawesome-report-chrome cypress run --spec 'cypress/e2e/login/*.js' --browser chrome --reporter mochawesome --reporter-options reportDir=mochawesome-report-chrome",
     "test:registration:chrome": "CYPRESS_REPORT_DIR=mochawesome-report-chrome cypress run --spec 'cypress/e2e/registration/*.js' --browser chrome --reporter mochawesome --reporter-options reportDir=mochawesome-report-chrome",
@@ -29,8 +29,10 @@
     "test:merge-reports-firefox": "mochawesome-merge mochawesome-report-firefox/.jsons/*.json > mochawesome-report-firefox/merged-report-firefox.json",
     "test:generate-report-chrome": "marge mochawesome-report-chrome/merged-report-chrome.json -o mochawesome-report-chrome",
     "test:generate-report-firefox": "marge mochawesome-report-firefox/merged-report-firefox.json -o mochawesome-report-firefox",
-    "test:all:chrome": "npm run clean:reports-chrome && concurrently --kill-others-on-fail false \"npm run test:login:chrome\" \"npm run test:registration:chrome\" \"npm run test:listing:chrome\" \"npm run test:search:chrome\" && npm run test:merge-reports-chrome && npm run test:generate-report-chrome",
-    "test:all:firefox": "npm run clean:reports-firefox && concurrently --kill-others-on-fail false \"npm run test:login:firefox\" \"npm run test:registration:firefox\" \"npm run test:listing:firefox\" \"npm run test:search:firefox\" && npm run test:merge-reports-firefox && npm run test:generate-report-firefox",
+    "test:all:chrome": "npm run clean:reports-chrome && concurrently --kill-others-on-fail false \"npm run test:login:chrome\" \"npm run test:registration:chrome\" \"npm run test:listing:chrome\" \"npm run test:search:chrome\"",
+    "test:all:chrome:report": "npm-run-all --continue-on-error test:all:chrome test:merge-reports-chrome test:generate-report-chrome",
+    "test:all:firefox": "npm run clean:reports-firefox && concurrently --kill-others-on-fail false \"npm run test:login:firefox\" \"npm run test:registration:firefox\" \"npm run test:listing:firefox\" \"npm run test:search:firefox\"",
+    "test:all:firefox:report": "npm-run-all --continue-on-error test:all:firefox test:merge-reports-firefox test:generate-report-firefox",
     "test:chrome": "npm run clean:reports-chrome && CYPRESS_REPORT_DIR=mochawesome-report-chrome npx cypress run --browser chrome && npm run test:merge-reports-chrome && npm run test:generate-report-chrome",
     "test:firefox": "npm run clean:reports-firefox && CYPRESS_REPORT_DIR=mochawesome-report-firefox npx cypress run --browser firefox --headless && npm run test:merge-reports-firefox && npm run test:generate-report-firefox"
   }
