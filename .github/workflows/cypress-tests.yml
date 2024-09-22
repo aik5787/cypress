@@ -25,6 +25,7 @@ jobs:
         run: npm run test:all:chrome:report
         working-directory: ./Week-10-cy-automation
       - name: Upload Mochawesome reports chrome
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report-chrome
@@ -47,6 +48,7 @@ jobs:
         run: npm run test:all:firefox:report
         working-directory: ./Week-10-cy-automation
       - name: Upload Mochawesome reports firefox
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report-firefox
