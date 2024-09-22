@@ -38,7 +38,7 @@ describe("Listing", () => {
 
     cy.contains("More Info").click();
 
-    cy.contains(newListingDetails.titl);
+    cy.contains(newListingDetails.title);
     cy.contains(listingDetailsCheck.address);
     cy.contains(listingDetailsCheck.price);
     cy.contains(listingDetailsCheck.lotSize);
