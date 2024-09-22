@@ -24,6 +24,20 @@ jobs:
       - name: Run Cypress tests
         run: npm run test:all:chrome:report
         working-directory: ./Week-10-cy-automation
+      - name: Check for Chrome report files
+        run: |
+          REPORTS=(
+            "./Week-10-cy-automation/mochawesome-report-chrome/merged-report-chrome.html"
+            "./Week-10-cy-automation/mochawesome-report-chrome/merged-report-chrome.json"
+          )
+
+          for FILE in "${REPORTS[@]}"; do
+            if [ -f "$FILE" ]; then
+              echo "$FILE exists."
+            else
+              echo "$FILE does not exist."
+            fi
+          done
       - name: Upload Mochawesome reports chrome
         uses: actions/upload-artifact@v4
         with:
@@ -47,12 +61,23 @@ jobs:
       - name: Run Cypress tests
         run: npm run test:all:firefox:report
         working-directory: ./Week-10-cy-automation
+      - name: Check for Firefox report files
+        run: |
+          REPORTS=(
+            "./Week-10-cy-automation/mochawesome-report-firefox/merged-report-firefox.html"
+            "./Week-10-cy-automation/mochawesome-report-firefox/merged-report-firefox.json"
+          )
+
+          for FILE in "${REPORTS[@]}"; do
+            if [ -f "$FILE" ]; then
+              echo "$FILE exists."
+            else
+              echo "$FILE does not exist."
+            fi
+          done
       - name: Upload Mochawesome reports firefox
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report-firefox
           path: ./Week-10-cy-automation/mochawesome-report-firefox/
         if: always() 
-
-  
-
