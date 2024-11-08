@@ -50,7 +50,6 @@ jobs:
       - name: Run Cypress tests
         run: npm run test:parallel:firefox
         working-directory: ./Week-10-cy-automation
-        continue-on-error: true 
       - name: Upload Mochawesome reports firefox
         if: always()
         uses: actions/upload-artifact@v4
