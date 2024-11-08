@@ -21,6 +21,7 @@ jobs:
         with:
           browser: chrome
           working-directory: ./Week-10-cy-automation
+        continue-on-error: true 
       - name: Run Cypress tests
         run: npm run test:parallel:chrome
         working-directory: ./Week-10-cy-automation
