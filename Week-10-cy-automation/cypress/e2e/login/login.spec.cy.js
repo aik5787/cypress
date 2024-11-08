@@ -18,7 +18,7 @@ describe("Login", () => {
 
   it("Should Log out", () => {
     cy.login();
-    dashboardPage.accountIc.click();
+    dashboardPage.accountIcn.click();
     cy.contains("Logout").click();
 
     cy.url().should("include", "auth/login");
