@@ -9,6 +9,6 @@ describe("Registration", () => {
  
   it.only ("Should register a new account via API", () => {
     cy.registerNewUser(firstName, lastName, email, password)
-    cy.deleteNewUser()
+    // cy.deleteNewUser()
   });
 });

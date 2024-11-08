@@ -23,7 +23,7 @@ jobs:
           working-directory: ./Week-10-cy-automation
         continue-on-error: true 
       - name: Run Cypress tests
-        run: npm run test:all:chrome:report
+        run: npm run test:parallel:chrome
         working-directory: ./Week-10-cy-automation
         continue-on-error: true 
       - name: Upload Mochawesome reports chrome
@@ -48,7 +48,7 @@ jobs:
           working-directory: ./Week-10-cy-automation
         continue-on-error: true 
       - name: Run Cypress tests
-        run: npm run test:all:firefox:report
+        run: npm run test:parallel:firefox
         working-directory: ./Week-10-cy-automation
         continue-on-error: true 
       - name: Upload Mochawesome reports firefox

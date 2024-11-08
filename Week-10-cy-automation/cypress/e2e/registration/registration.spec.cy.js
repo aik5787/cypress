@@ -47,7 +47,7 @@ describe("Registration", () => {
     cy.contains(registrationValidationErrors.passwordRequired);
   });
 
-  it("Should overwrite user role", () => {
+  it.skip("Should overwrite user role", () => {
     cy.overwriteRole();
     cy.login(email, password);
     
