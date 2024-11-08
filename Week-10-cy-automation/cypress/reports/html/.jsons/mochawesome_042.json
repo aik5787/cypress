@@ -1,0 +1,164 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 4,
+    "failures": -3,
+    "start": "2024-11-08T19:09:55.781Z",
+    "end": "2024-11-08T19:09:55.845Z",
+    "duration": 64,
+    "testsRegistered": 4,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 3,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e9ddbf1f-bdf5-41c8-9b62-d04e743b9cca",
+      "title": "",
+      "fullFile": "cypress/e2e/registration/registration.spec.cy.js",
+      "file": "cypress/e2e/registration/registration.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "38d0113a-e6fb-4198-91f4-1e5e5c25b10a",
+          "title": "Registration",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should register a new account",
+              "fullTitle": "Registration Should register a new account",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.intercept('POST', '/api/users/registration').as('registerUser');\n_registration_page.default.registration(firstName, lastName, email, password);\ncy.wait('@registerUser').then(interception => {\n  const newUserId = interception.response.body.user.id;\n  Cypress.env(\"newUserId\", newUserId);\n  window.localStorage.setItem(\"accessToken\", interception.response.body.accessToken);\n});\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.user.role);\n_dashboard.default.nameLbl.should(\"have.text\", `${firstName}  ${lastName}`);\ncy.title().should(\"eq\", \"User: Profile | Delek Homes\");",
+              "err": {},
+              "uuid": "9f2eaff6-6d47-47c1-a2eb-0505d38ac57a",
+              "parentUUID": "38d0113a-e6fb-4198-91f4-1e5e5c25b10a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not register with an already existing email account",
+              "fullTitle": "Registration Should not register with an already existing email account",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "_registration_page.default.registration(firstName, lastName, _userCredentials.default.realtor.email, password);\n_registration_page.default.alertMssg.should(\"exist\").and(\"have.text\", _registrationValidationErrors.default.validationFailed);",
+              "err": {},
+              "uuid": "c14fb2e4-b0ad-4239-81b2-5a341c84d894",
+              "parentUUID": "38d0113a-e6fb-4198-91f4-1e5e5c25b10a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should not register without filling in required fields",
+              "fullTitle": "Registration Should not register without filling in required fields",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "_registration_page.default.submitBtn.click();\ncy.contains(_registrationValidationErrors.default.firstNameRequired);\ncy.contains(_registrationValidationErrors.default.lastNameRequired);\ncy.contains(_registrationValidationErrors.default.emailRequired);\ncy.contains(_registrationValidationErrors.default.passwordRequired);",
+              "err": {},
+              "uuid": "af305af2-80c9-4050-a1b9-26c93101f8d9",
+              "parentUUID": "38d0113a-e6fb-4198-91f4-1e5e5c25b10a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should overwrite user role",
+              "fullTitle": "Registration Should overwrite user role",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.overwriteRole();\ncy.login(email, password);\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.realtor.role);",
+              "err": {},
+              "uuid": "f66abdff-0d24-418b-aa0f-8c8670f0aee5",
+              "parentUUID": "38d0113a-e6fb-4198-91f4-1e5e5c25b10a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "9f2eaff6-6d47-47c1-a2eb-0505d38ac57a",
+            "c14fb2e4-b0ad-4239-81b2-5a341c84d894",
+            "af305af2-80c9-4050-a1b9-26c93101f8d9",
+            "f66abdff-0d24-418b-aa0f-8c8670f0aee5"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "showPassed": true,
+        "html": false,
+        "json": true,
+        "alwaysGenerateReport": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

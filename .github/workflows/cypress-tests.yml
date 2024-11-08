@@ -27,6 +27,7 @@ jobs:
         working-directory: ./Week-10-cy-automation
         continue-on-error: true 
       - name: Upload Mochawesome reports chrome
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report-chrome
@@ -52,6 +53,7 @@ jobs:
         working-directory: ./Week-10-cy-automation
         continue-on-error: true 
       - name: Upload Mochawesome reports firefox
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report-firefox
