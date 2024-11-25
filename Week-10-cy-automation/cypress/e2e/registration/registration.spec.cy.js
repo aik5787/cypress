@@ -14,9 +14,9 @@ describe("Registration", () => {
     cy.visit("/auth/register");
   });
 
-  // after(() => {
-  //   cy.deleteNewUser()
-  // });
+  after(() => {
+    cy.deleteNewUser()
+  });
 
   it ("Should register a new account", () => {
     cy.intercept('POST', '/api/users/registration').as('registerUser');
@@ -47,7 +47,7 @@ describe("Registration", () => {
     cy.contains(registrationValidationErrors.passwordRequired);
   });
 
-  it.skip("Should overwrite user role", () => {
+  it("Should overwrite user role", () => {
     cy.overwriteRole();
     cy.login(email, password);
     
