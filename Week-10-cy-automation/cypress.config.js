@@ -1,5 +1,4 @@
 const { defineConfig } = require("cypress");
-const mochawesome = require("cypress-mochawesome-reporter/plugin");
 
 module.exports = defineConfig({
   e2e: {
@@ -8,14 +7,14 @@ module.exports = defineConfig({
     viewportHeight: 1200,
     reporter: "cypress-mochawesome-reporter",
     reporterOptions: {
-      reportDir: "mochawesome-report",
-      reportFilename: "[status]_[datetime]-[name]-report",
-      overwrite: false,
+      reportDir: process.env.CYPRESS_REPORT_DIR,
+      overwrite: true,
       showPassed: true,
-      timestamp: "longDate",
+      html: false, 
+      json: true,
+      alwaysGenerateReport: true 
     },
     setupNodeEvents(on, config) {
-      mochawesome(on);
       require("@cypress/grep/src/plugin")(config);
       return config;
     },

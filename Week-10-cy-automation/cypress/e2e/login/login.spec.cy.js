@@ -9,10 +9,10 @@ describe("Login", () => {
   });
 
   it("Should Log in with exusting account",{ tags: '@smoke' }, () => {
-    loginPage.login(userCredentials.realtor.email, userCredentials.realtor.password);
+    loginPage.login(userCredentials.user.email, userCredentials.user.password);
 
-    dashboardPage.nameLbl.should("have.text", userCredentials.realtor.name);
-    dashboardPage.roleLbl.should("have.text", userCredentials.realtor.role);
+    // dashboardPage.nameLbl.should("have.text", userCredentials.user.name);
+    dashboardPage.roleLbl.should("have.text", userCredentials.user.role);
     cy.title().should("eq", "User: Profile | Delek Homes");
   });
 

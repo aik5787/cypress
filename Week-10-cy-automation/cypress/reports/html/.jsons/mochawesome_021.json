@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 2,
+    "failures": -1,
+    "start": "2024-11-08T18:56:03.043Z",
+    "end": "2024-11-08T18:56:03.092Z",
+    "duration": 49,
+    "testsRegistered": 2,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fe6ae43f-9979-43e5-9346-039ddb1b6592",
+      "title": "",
+      "fullFile": "cypress/e2e/login/login.spec.cy.js",
+      "file": "cypress/e2e/login/login.spec.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8139becf-fcf9-4ad9-afb7-cccc8b9e216a",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should Log in with exusting account",
+              "fullTitle": "Login Should Log in with exusting account",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "_login.default.login(_userCredentials.default.user.email, _userCredentials.default.user.password);\n// dashboardPage.nameLbl.should(\"have.text\", userCredentials.user.name);\n_dashboard.default.roleLbl.should(\"have.text\", _userCredentials.default.user.role);\ncy.title().should(\"eq\", \"User: Profile | Delek Homes\");",
+              "err": {},
+              "uuid": "dea2a2a5-ca38-40c5-a876-9875dd2c73f2",
+              "parentUUID": "8139becf-fcf9-4ad9-afb7-cccc8b9e216a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should Log out",
+              "fullTitle": "Login Should Log out",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.login();\n_dashboard.default.accountIc.click();\ncy.contains(\"Logout\").click();\ncy.url().should(\"include\", \"auth/login\");\ncy.title().should(\"eq\", \"Login | Delek Homes\");",
+              "err": {},
+              "uuid": "01f6b23b-05f9-4304-9017-96c02c2c1338",
+              "parentUUID": "8139becf-fcf9-4ad9-afb7-cccc8b9e216a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "dea2a2a5-ca38-40c5-a876-9875dd2c73f2",
+            "01f6b23b-05f9-4304-9017-96c02c2c1338"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "showPassed": true,
+        "html": false,
+        "json": true,
+        "alwaysGenerateReport": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

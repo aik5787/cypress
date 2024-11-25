@@ -13,7 +13,7 @@ import "cypress-file-upload";
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add("login", (email = userCredentials.realtor.email, password = userCredentials.realtor.password) => {
+Cypress.Commands.add("login", (email = userCredentials.user.email, password = userCredentials.user.password) => {
   cy.request("POST", "/api/users/login", {
     email: email,
     password: password,
